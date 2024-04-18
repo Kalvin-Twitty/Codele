@@ -32,6 +32,13 @@ function PokemonGame() {
     setGuess('');
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleGuess();
+    }
+  };
+
   if (!pokemonData) return <div>Loading...</div>;
 
   return (
@@ -61,30 +68,26 @@ function PokemonGame() {
           />
           <div className="absolute inset-0 "></div>
         </div>
-        <motion.input
+        <input
           type="text"
           value={guess}
           onChange={(e) => setGuess(e.target.value)}
           placeholder="Enter Pokémon name"
           className="input input-bordered input-accent w-full mb-4 text-black placeholder-gray-500 bg-gray-100 rounded-lg shadow-md transition duration-150 ease-in-out p-4"
-          whileFocus={{ scale: 1.02 }}
+          onKeyDown={handleKeyPress}
+          autoFocus
         />
-        <motion.button 
+        <button 
           onClick={handleGuess} 
           className="btn bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg w-full"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
         >
           Guess
-        </motion.button>
-        <motion.p 
+        </button>
+        <p 
           className="mt-4 text-center"
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
         >
           {message}
-        </motion.p>
+        </p>
       </div>
     </motion.div>
   );

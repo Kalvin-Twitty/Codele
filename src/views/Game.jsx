@@ -73,7 +73,7 @@ function Game() {
       {Array.from('Lucky 7s from Final Fantasy 7').map((letter, index) => (
         <motion.span 
           key={index}
-          style={{ animation: `rainbow 3s linear infinite ${index * 0.2}s` }}
+          style={{ animation: `rainbow 1.2s linear infinite ${index * 0.2}s` }}
         >
           {letter}
         </motion.span>
