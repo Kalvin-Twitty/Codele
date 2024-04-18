@@ -3,7 +3,7 @@ import { FaRegLightbulb } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import words from '../words.json';
 import { useNavigate } from 'react-router-dom';
-import useLocalStorage from '../hooks/useLocalStorage'; // Import the custom hook
+import useLocalStorage from '../hooks/useLocalStorage';
 
 function Game() {
   const [currentWordData, setCurrentWordData] = useState({});
