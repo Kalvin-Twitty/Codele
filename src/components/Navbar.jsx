@@ -14,7 +14,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="flex items-center justify-between bg-slate-800 p-6">
-        <span className="font-semibold text-xl tracking-tight text-green-400">Codele</span>
+        {/* Make the "Codele" text clickable */}
+        <Link to="/" className="font-semibold text-xl tracking-tight text-green-400">Codele</Link>
         <FaBars
           className="text-green-400 cursor-pointer"
           size={24}
