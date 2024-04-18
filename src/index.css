@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="text"] {
+  @apply mt-2 p-2 border-2 border-gray-200 rounded-md;
+}
+
+button {
+  @apply ml-2 p-2 bg-blue-500 text-white rounded hover:bg-blue-700;
+}
+
+p {
+  @apply mt-2;
+}
+
+.pokemon-silhouette {
+  filter: brightness(0) invert(1); /* This converts the image to a complete black silhouette */
+  width: 18rem; /* Equivalent to w-72 in Tailwind CSS */
+  height: 18rem; /* Equivalent to h-72 in Tailwind CSS */
+}
+
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  16.67% {
+    color: orange;
+  }
+  33.33% {
+    color: yellow;
+  }
+  50% {
+    color: green;
+  }
+  66.67% {
+    color: blue;
+  }
+  83.33% {
+    color: indigo;
+  }
+  100% {
+    color: violet;
+  }
+}

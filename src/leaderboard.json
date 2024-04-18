@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "username": "Kalvin",
+    "streak": 69
+  },
+  {
+    "id": 2,
+    "username": "DevPro",
+    "streak": 40
+  },
+  {
+    "id": 3,
+    "username": "BugHunter",
+    "streak": 20
+  },
+  {
+    "id": 4,
+    "username": "ReactNewbie",
+    "streak": 14
+  },
+  {
+    "id": 5,
+    "username": "FullStackFanatic",
+    "streak": 10
+  }
+]

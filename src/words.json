@@ -1,0 +1,237 @@
+[
+  {
+    "word": "algorithm",
+    "hints": ["A process", "Related to calculations", "Step by step"],
+    "definition": "A process or set of rules to be followed in calculations.",
+    "date": "2024-04-08"
+
+  },
+  {
+    "word": "binary",
+    "hints": ["Two states", "0s and 1s", "Digital base"],
+    "definition": "A way of representing information using only two options.",
+    "date": "2024-04-09"
+  },
+  {
+    "word": "callback",
+    "hints": ["Function parameter", "Asynchronous", "Event response"],
+    "definition": "A function passed into another function as an argument.",
+    "date": "2024-04-10"
+  },
+  {
+    "word": "debugging",
+    "hints": ["Fixing errors", "Code examination", "Development phase"],
+    "definition": "The process of finding and resolving defects in software.",
+    "date": "2024-04-11"
+  },
+  {
+    "word": "authorization",
+    "hints": ["Permission granting", "Access control", "Privileges"],
+    "definition": "The process of giving someone permission to do or have something.",
+    "date": "2024-04-12"
+  },
+  {
+    "word": "framework",
+    "hints": ["Software structure", "Development platform", "Reusable set of libraries"],
+    "definition": "A basic structure underlying a system, concept, or text.",
+    "date": "2024-04-13"
+  },
+  {
+    "word": "git",
+    "hints": ["Version control", "Collaboration tool", "Code management"],
+    "definition": "A distributed version-control system for tracking changes.",
+    "date": "2024-04-14"
+  },
+  {
+    "word": "html",
+    "hints": ["Web development", "Markup language", "Structure of web pages"],
+    "definition": "The standard markup language for documents designed to be displayed.",
+    "date": "2024-04-15"
+  },
+  {
+    "word": "inheritance",
+    "hints": ["OOP concept", "Properties transmission", "Parent-child relationship"],
+    "definition": "An object-oriented programming principle.",
+    "date": "2024-04-16"
+  },
+  {
+    "word": "json",
+    "hints": ["Data format", "Attribute-value pairs", "Lightweight"],
+    "definition": "A lightweight format for storing and transporting data.",
+    "date": "2024-04-17"
+  },
+  {
+    "word": "loop",
+    "hints": ["Repetition", "Iteration", "Cycling through"],
+    "definition": "A sequence of instructions that is continually repeated.",
+    "date": "2024-04-18"
+  },
+  {
+    "word": "middleware",
+    "hints": ["Software layer", "Between OS and applications", "Enables communication"],
+    "definition": "Software that acts as a bridge between an operating system.",
+    "date": "2024-04-19"
+  },
+  {
+    "word": "nodejs",
+    "hints": ["JavaScript runtime", "Server-side", "Non-blocking I/O"],
+    "definition": "A JavaScript runtime built on Chrome's V8 engine.",
+    "date": "2024-04-20"
+  },
+  {
+    "word": "object",
+    "hints": ["Instance", "Encapsulation", "OOP"],
+    "definition": "A particular instance of a class where the object can be a combination.",
+    "date": "2024-04-21"
+  },
+  {
+    "word": "polymorphism",
+    "hints": ["Many forms", "OOP concept", "Method overriding"],
+    "definition": "The ability of different objects to respond in a unique way.",
+    "date": "2024-04-22"
+  },
+    {
+      "word": "deployment",
+      "hints": ["Release process", "Software installation", "Server setup"],
+      "definition": "The process of making a software system available for use.",
+      "date": "2024-04-23"
+    },
+  {
+    "word": "react",
+    "hints": ["User interface", "JavaScript library", "Components"],
+    "definition": "A JavaScript library for building user interfaces.",
+    "date": "2024-04-24"
+  },
+  {
+    "word": "sdk",
+    "hints": ["Development kit", "Software tools", "Application creation"],
+    "definition": "A set of software tools and programs used by developers.",
+    "date": "2024-04-25"
+  },
+  {
+    "word": "token",
+    "hints": ["Authentication", "Access control", "Security mechanism"],
+    "definition": "A piece of data that represents a claim to be authenticated.",
+    "date": "2024-04-26"
+  },
+  {
+    "word": "url",
+    "hints": ["Web address", "Link", "HTTP"],
+    "definition": "The address of a World Wide Web page.",
+    "date": "2024-04-27"
+  },
+  {
+    "word": "variable",
+    "hints": ["Storage", "Data value", "Programming"],
+    "definition": "An element, feature, or factor that is liable to vary or change.",
+    "date": "2024-04-28"
+  },
+  {
+    "word": "webhook",
+    "hints": ["HTTP callback", "Event notifications", "Automated messages"],
+    "definition": "A method of augmenting or altering the behavior of a web page.",
+    "date": "2024-04-29"
+  },
+  {
+    "word": "xml",
+    "hints": ["Markup language", "Data storage and transport", "Structured format"],
+    "definition": "A markup language that defines a set of rules for encoding documents.",
+    "date": "2024-04-30"
+  },
+  {
+    "word": "yaml",
+    "hints": ["Configuration", "Data serialization", "Human-readable"],
+    "definition": "A human-readable data serialization standard for all programming languages.",
+    "date": "2024-05-01"
+  },
+  {
+    "word": "z-index",
+    "hints": ["CSS property", "Stacking order", "Layering"],
+    "definition": "A CSS property that sets the z-order of a positioned element.",
+    "date": "2024-05-02"
+  },
+  {
+    "word": "encryption",
+    "hints": ["Security", "Converting information", "Cipher"],
+    "definition": "The process of converting information or data into a code.",
+    "date": "2024-05-03"
+  },
+  {
+    "word": "firewall",
+    "hints": ["Network security", "Barrier", "Packet filtering"],
+    "definition": "A network security device that monitors and filters incoming and outgoing network traffic.",
+    "date": "2024-05-04"
+  },
+  {
+    "word": "hacker",
+    "hints": ["Security threat", "Unauthorized access", "Cybercriminal"],
+    "definition": "A person who uses computers to gain unauthorized access to data.",
+    "date": "2024-05-05"
+  },
+  {
+    "word": "integration",
+    "hints": ["Combining systems", "Interoperability", "Data sharing"],
+    "definition": "The process of bringing together different systems or software applications to function as a whole.",
+    "date": "2024-05-06"
+  },
+  {
+    "word": "javascript",
+    "hints": ["Programming language", "Web development", "Client-side scripting"],
+    "definition": "A programming language commonly used to create interactive effects within web browsers.",
+    "date": "2024-05-07"
+  },
+  {
+    "word": "kernel",
+    "hints": ["Operating system core", "Control program", "System resource management"],
+    "definition": "The core component of an operating system that provides basic services for all other parts of the operating system.",
+    "date": "2024-05-08"
+  },
+  {
+    "word": "linux",
+    "hints": ["Operating system", "Open-source", "Unix-like"],
+    "definition": "A family of open-source Unix-like operating systems based on the Linux kernel.",
+    "date": "2024-05-09"
+  },
+  {
+    "word": "migration",
+    "hints": ["Data transfer", "Moving to new system", "Upgrade"],
+    "definition": "The process of transferring data, applications, or other business elements from one system, storage, or server to another.",
+    "date": "2024-05-10"
+  },
+  {
+    "word": "network",
+    "hints": ["Connections", "Communication", "Interconnected devices"],
+    "definition": "A group of interconnected computers, servers, mainframes, network devices, or other devices.",
+    "date": "2024-05-11"
+  },
+  {
+    "word": "operating system",
+    "hints": ["OS", "System software", "Computer management"],
+    "definition": "The software that manages computer hardware resources and provides common services for computer programs.",
+    "date": "2024-05-12"
+  },
+  {
+    "word": "programming",
+    "hints": ["Coding", "Software development", "Algorithm implementation"],
+    "definition": "The process of creating a set of instructions that tell a computer how to perform a task.",
+    "date": "2024-05-13"
+  },
+  {
+    "word": "query",
+    "hints": ["Database action", "Information request", "Data retrieval"],
+    "definition": "A request for information from a database.",
+    "date": "2024-05-14"
+  },
+  {
+    "word": "routing",
+    "hints": ["Path determination", "Traffic directing", "Network management"],
+    "definition": "The process of selecting a path for traffic in a network or between multiple networks.",
+    "date": "2024-05-15"
+  },
+  {
+    "word": "server",
+    "hints": ["Computer system", "Data storage", "Client requests"],
+    "definition": "A computer program or device that provides functionality for other programs or devices, called clients.",
+    "date": "2024-05-16"
+  }
+]
