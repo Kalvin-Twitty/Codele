@@ -8,8 +8,16 @@ function PokemonGame() {
   const [isGuessCorrect, setIsGuessCorrect] = useState(false);
 
   useEffect(() => {
-    // Fetch a random Pokémon
-    const pokemonId = Math.floor(Math.random() * 151) + 1; // 1st gen Pokémon
+    // Get the current date
+    const today = new Date();
+  
+    // Get the day of the year (1-366)
+    const dayOfYear = today.getDate() + today.getMonth() * 31;
+
+    // Use the day of the year to generate a consistent random Pokémon ID
+    const pokemonId = (dayOfYear % 151) + 1; // 1st gen Pokémon
+
+    // Fetch the Pokémon data based on the generated ID
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
       .then(response => response.json())
       .then(data => {
@@ -25,6 +33,9 @@ function PokemonGame() {
     if (guess.toLowerCase() === pokemonData.name) {
       setMessage('Correct!');
       setIsGuessCorrect(true);
+      // Record the completed game in local storage
+      const completedGames = JSON.parse(localStorage.getItem('completedGames')) || [];
+      localStorage.setItem('completedGames', JSON.stringify([...completedGames, pokemonData.name]));
     } else {
       setMessage('Try again!');
       setIsGuessCorrect(false);
@@ -40,6 +51,9 @@ function PokemonGame() {
   };
 
   if (!pokemonData) return <div>Loading...</div>;
+
+  // Check if the game has already been completed
+  const gameCompleted = JSON.parse(localStorage.getItem('completedGames') || '[]').includes(pokemonData.name);
 
   return (
     <motion.div 
@@ -68,21 +82,28 @@ function PokemonGame() {
           />
           <div className="absolute inset-0 "></div>
         </div>
-        <input
-          type="text"
-          value={guess}
-          onChange={(e) => setGuess(e.target.value)}
-          placeholder="Enter Pokémon name"
-          className="input input-bordered input-accent w-full mb-4 text-black placeholder-gray-500 bg-gray-100 rounded-lg shadow-md transition duration-150 ease-in-out p-4"
-          onKeyDown={handleKeyPress}
-          autoFocus
-        />
-        <button 
-          onClick={handleGuess} 
-          className="btn bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg w-full"
-        >
-          Guess
-        </button>
+        {!gameCompleted && (
+          <>
+            <input
+              type="text"
+              value={guess}
+              onChange={(e) => setGuess(e.target.value)}
+              placeholder="Enter Pokémon name"
+              className="input input-bordered input-accent w-full mb-4 text-black placeholder-gray-500 bg-gray-100 rounded-lg shadow-md transition duration-150 ease-in-out p-4"
+              onKeyDown={handleKeyPress}
+              autoFocus
+            />
+            <button 
+              onClick={handleGuess} 
+              className="btn bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg w-full"
+            >
+              Guess
+            </button>
+          </>
+        )}
+        {gameCompleted && (
+          <p className="mt-4 text-center">You have already completed this game!</p>
+        )}
         <p 
           className="mt-4 text-center"
         >
