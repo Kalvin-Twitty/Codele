@@ -43,3 +43,7 @@ p {
     color: violet;
   }
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}

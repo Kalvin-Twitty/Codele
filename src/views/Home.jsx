@@ -1,10 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { getFirestore, query, collection, getDocs, orderBy } from 'firebase/firestore';
 import { FaCode, FaTrophy, FaUsers } from 'react-icons/fa';
 import Footer from '../components/Footer';
-
+import { firestore } from '../firebase/firebaseConfig';
+import { Link } from 'react-router-dom';
 
 function Home() {
+  const [patchnotes, setPatchnotes] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const fetchPatchnotes = async () => {
+    const q = query(collection(firestore, "commits"), orderBy("timestamp", "desc"));
+    const querySnapshot = await getDocs(q);
+    const patchnotesData = querySnapshot.docs.map(doc => doc.data());
+    setPatchnotes(patchnotesData);
+  };
+
+  useEffect(() => {
+    fetchPatchnotes();
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen bg-slate-900 text-gray-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-grow">
@@ -13,14 +28,18 @@ function Home() {
             <div className="text-center lg:text-left">
               <h1 className="text-5xl font-bold mb-5">Welcome to <span className="text-green-500">Codele</span></h1>
               <p className="mb-5">Challenge your software development knowledge in a fun and interactive way!</p>
-              <div className="flex justify-center lg:justify-start"> {/* Adjusted for centering */}
-                <Link to="/game" className="btn bg-green-500 text-white active:bg-green-600 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 transition duration-150 ease-in-out">
+              <div className="flex justify-center lg:justify-start">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="btn bg-green-500 text-white active:bg-green-600 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 transition duration-150 ease-in-out"
+                >
+                  View Patch Notes
+                </button>
+                 <Link to="/game" className="btn bg-green-500 text-white active:bg-green-600 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 transition duration-150 ease-in-out">
                   Start Playing
                 </Link>
               </div>
             </div>
-            
-            
             <div className="mockup-code w-full lg:max-w-lg rounded overflow-hidden shadow-2xl bg-slate-800 p-6">
               <div className="flex justify-center mb-4">
                 <FaCode className="text-green-500 w-16 h-16"/>
@@ -35,7 +54,7 @@ function Home() {
             </div>
           </div>
         </div>
-
+  
         <div className="features py-12 md:py-20">
           <div className="text-center">
             <h2 className="text-4xl font-bold mb-8">Why play <span className="text-green-500">Codele</span>?</h2>
@@ -60,6 +79,35 @@ function Home() {
         </div>
       </div>
       <Footer />
+  
+{/* Patchnotes Modal */}
+{isModalOpen && (
+  <div className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden">
+    <div className="absolute inset-0 bg-black bg-opacity-60 transition-opacity duration-300"></div>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-slate-800 rounded-xl p-8 max-w-2xl mx-auto relative z-10 shadow-lg overflow-auto"
+           style={{ maxHeight: '85vh', scrollbarWidth: 'none' }} // Hides scrollbar for Firefox
+           >
+        <h2 className="text-4xl font-bold mb-6 text-center text-green-500 animate-fade-in-down">Patch Notes</h2>
+        <div className="space-y-4">
+          {patchnotes.map((note, index) => (
+            <div key={index} className="bg-gray-800 p-6 rounded-lg shadow">
+              <p className="text-sm text-gray-400 mb-1">{note.timestamp}</p>
+              <p className="text-lg text-green-500 mb-1 font-semibold">{note.author}</p>
+              <p className="text-gray-300 leading-relaxed">{note.message}</p>
+            </div>
+          ))}
+        </div>
+        <button
+          onClick={() => setIsModalOpen(false)}
+          className="btn bg-red-500 hover:bg-red-700 text-white font-bold mt-8 w-full py-3 rounded shadow hover:shadow-lg transition duration-150 ease-in-out"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
