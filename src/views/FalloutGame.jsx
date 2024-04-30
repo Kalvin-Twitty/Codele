@@ -16,31 +16,34 @@ const Terminal = () => {
   const [selfDestruct, setSelfDestruct] = useState(false);
 
   const handleWordSelection = (word) => {
-    console.log(`Word selected: ${word}`); // For debugging
     if (lockout || granted) return;
 
     setSelectedWord(word);
-    const likeness = word.split('').reduce((acc, char, idx) => {
-      return acc + (correctPassword[idx] === char ? 1 : 0);
-    }, 0);
+    const likeness = getLikeness(word, correctPassword);
 
     if (word === correctPassword) {
       setMessage('Access granted! Correct password: ' + word);
       setGranted(true);
-      setTimeout(() => setLockout(true), 2000);
+      setTimeout(() => setLockout(true), 2000);  // Locks out further input
     } else {
       const remainingAttempts = attempts - 1;
       setAttempts(remainingAttempts);
       setMessage(
         remainingAttempts <= 0
           ? 'Self-Destruct initiated.'
-          : `${word} is incorrect. ${likeness}/${word.length} correct.`
+          : `${word} is incorrect. ${likeness} correct position(s).`
       );
       if (remainingAttempts <= 0) {
         setSelfDestruct(true);
-        setTimeout(() => setLockout(true), 5000);
+        setTimeout(() => setLockout(true), 5000);  // Final lockout after self-destruct
       }
     }
+  };
+
+  const getLikeness = (word, correctPassword) => {
+    return word.split('').reduce((acc, char, idx) => {
+      return acc + (correctPassword[idx] === char ? 1 : 0);
+    }, 0);
   };
 
   return (
@@ -66,7 +69,7 @@ const Terminal = () => {
                 <button
                   key={index}
                   onClick={() => handleWordSelection(word)}
-                  disabled={lockout}
+                  disabled={lockout || granted}
                   className={`w-full text-left px-6 py-3 text-lg font-mono font-bold ${selectedWord === word ? 'bg-blue-800 text-white' : 'text-green-200 bg-gray-900 hover:bg-gray-800'} rounded-lg transition ease-in-out duration-150`}
                 >
                   {word}
