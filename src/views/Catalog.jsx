@@ -21,6 +21,11 @@ const Journey = () => {
     './assets/Image12.png',
     './assets/Image13.png',
     './assets/Image14.png',
+    './assets/Image15.png',
+    './assets/Image16.png',
+    './assets/Image17.png',
+    './assets/Image18.png',
+    './assets/Image19.png',
   ];
 
   const handleImageClick = (index) => {
