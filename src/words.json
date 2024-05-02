@@ -160,7 +160,7 @@
     "word": "firewall",
     "hints": ["Network security", "Barrier", "Packet filtering"],
     "definition": "A network security device that monitors and filters incoming and outgoing network traffic.",
-    "date": "2024-05-02"
+    "date": "2024-05-07"
   },
   {
     "word": "hacker",
@@ -178,7 +178,7 @@
     "word": "javascript",
     "hints": ["Programming language", "Web development", "Client-side scripting"],
     "definition": "A programming language commonly used to create interactive effects within web browsers.",
-    "date": "2024-05-07"
+    "date": "2024-05-02"
   },
   {
     "word": "kernel",

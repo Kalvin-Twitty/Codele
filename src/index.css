@@ -15,9 +15,9 @@ p {
 }
 
 .pokemon-silhouette {
-  filter: brightness(0) invert(1); /* This converts the image to a complete black silhouette */
-  width: 18rem; /* Equivalent to w-72 in Tailwind CSS */
-  height: 18rem; /* Equivalent to h-72 in Tailwind CSS */
+  filter: brightness(0) invert(1);
+  width: 18rem; 
+  height: 18rem; 
 }
 
 @keyframes rainbow {

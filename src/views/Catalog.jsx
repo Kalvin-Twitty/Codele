@@ -5,7 +5,6 @@ import ImageCarousel from '../components/ImageCarousel';
 const Journey = () => {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  // Define your array of images
   const images = [
     './assets/Image1.png',
     './assets/Image2.png',
@@ -39,14 +38,13 @@ const Journey = () => {
 
   return (
     <div>
-      {/* Add background color to the body element */}
       <style>{`body { background-color: #0f172a; }`}</style>
-      <div className="container mx-auto my-8">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-center text-green-500">Img Catalog</h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="container mx-auto my-8 px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-center text-green-500">Img Catalog</h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
           {images.map((image, index) => (
-            <div key={index} className="group rounded-lg overflow-hidden shadow-lg" onClick={() => handleImageClick(index)}>
-              <img src={image} alt={`Image ${index + 1}`} className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-75 cursor-pointer" />
+            <div key={index} className="group rounded-lg overflow-hidden shadow-lg cursor-pointer" onClick={() => handleImageClick(index)}>
+              <img src={image} alt={`Image ${index + 1}`} className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-75" />
             </div>
           ))}
         </div>

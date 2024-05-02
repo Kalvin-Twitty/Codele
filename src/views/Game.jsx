@@ -13,17 +13,15 @@ function Game() {
   const [hintsDisplayed, setHintsDisplayed] = useState([]);
   const [attempts, setAttempts] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isFinalFantasy7, setIsFinalFantasy7] = useState(false); // State to track Final Fantasy 7 Easter egg
-  const [isGameOver, setIsGameOver] = useState(false); // State to track game over
-  const [isConfettiActive, setIsConfettiActive] = useState(false); // State to track confetti animation
-  const navigate = useNavigate(); 
-  const easterEggKeywords = ['pokemon', 'fallout']; // Easter egg keywords, case insensitive
+  const [isFinalFantasy7, setIsFinalFantasy7] = useState(false);
+  const [isGameOver, setIsGameOver] = useState(false);
+  const [isConfettiActive, setIsConfettiActive] = useState(false);
+  const navigate = useNavigate();
+  const easterEggKeywords = ['pokemon', 'fallout', '777'];
 
-  // Use custom hook to manage completed challenges in local storage
   const [completedChallenges, setCompletedChallenges] = useLocalStorage('completedChallenges', []);
 
   useEffect(() => {
-    // Fetch the word for today
     const today = new Date().toISOString().slice(0, 10);
     const todaysWord = words.find((word) => word.date === today);
     if (todaysWord) {
@@ -34,7 +32,6 @@ function Game() {
   }, []);
 
   useEffect(() => {
-    // Check if the current word has already been completed
     if (completedChallenges.includes(currentWordData.word)) {
       setMessage('You have already completed this challenge!');
       setGuess('');
@@ -43,37 +40,34 @@ function Game() {
 
   const handleGuessSubmit = (event) => {
     event.preventDefault();
-    // Check if the challenge has already been completed
     if (completedChallenges.includes(currentWordData.word)) {
       setMessage('You have already completed this challenge!');
       return;
     }
-    // Check if the user has run out of attempts
     if (attempts >= 4) {
       setMessage('No more attempts! Try again tomorrow.');
-      setCompletedChallenges([...completedChallenges, currentWordData.word]); // Record the completion status in local storage
+      setCompletedChallenges([...completedChallenges, currentWordData.word]);
       setGuess('');
-      setIsGameOver(true); // Set game over flag
+      setIsGameOver(true);
       return;
     }
-    // Check for Easter egg keywords
     if (easterEggKeywords.includes(guess.toLowerCase())) {
       if (guess.toLowerCase() === 'pokemon') {
-        navigate('/pokemon-game'); // Redirect to the Pokémon game route using navigate
+        navigate('/pokemon-game');
       } else if (guess.toLowerCase() === 'fallout') {
-        navigate('/fallout-game'); // Redirect to the Fallout game route using navigate
+        navigate('/fallout-game');
+      } else if (guess.toLowerCase() === '777') {
+        setIsFinalFantasy7(true); 
+        setMessage('Lucky 7s activated!');
       }
       return;
     }
-    // Check if the guess matches the current word
     if (guess.toLowerCase() === currentWordData.word.toLowerCase()) {
-      // Handle correct guess
       setMessage('Correct! Here is the definition:');
       setIsModalOpen(true);
-      setCompletedChallenges([...completedChallenges, currentWordData.word]); // Record the completion status in local storage
-      setIsConfettiActive(true); // Activate confetti animation
+      setCompletedChallenges([...completedChallenges, currentWordData.word]);
+      setIsConfettiActive(true);
     } else {
-      // Handle incorrect guess
       setMessage('Try again!');
       const newHintsDisplayed = [...hintsDisplayed];
       if (attempts < 3) {
@@ -90,6 +84,7 @@ function Game() {
   const closeModal = () => {
     setIsModalOpen(false);
     setIsConfettiActive(false);
+    setIsFinalFantasy7(false); 
   };
 
   return (
