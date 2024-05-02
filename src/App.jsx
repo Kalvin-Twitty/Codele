@@ -8,6 +8,7 @@ import Leaderboard from './views/Leaderboard';
 import Stack from './views/Stack';
 import PokemonGame from './views/PokemonGame';
 import FalloutGame from './views/FalloutGame';
+import Feedback from './views/Feedback';
 import Catalog from './views/Catalog';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/stack" element={<Stack />} />
         <Route path="/pokemon-game" element={<PokemonGame />} />
         <Route path="/fallout-game" element={<FalloutGame />} />
+        <Route path="/Feedback" element={<Feedback/>} />
         <Route path="/Catalog" element={<Catalog />} />
       </Routes>
     </Router>
