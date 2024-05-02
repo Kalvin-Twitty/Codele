@@ -7,7 +7,8 @@ import Game from './views/Game';
 import Leaderboard from './views/Leaderboard';
 import Stack from './views/Stack';
 import PokemonGame from './views/PokemonGame';
-import FalloutGame from './views/FalloutGame'; // Import the new Fallout game component
+import FalloutGame from './views/FalloutGame';
+import Catalog from './views/Catalog';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/stack" element={<Stack />} />
         <Route path="/pokemon-game" element={<PokemonGame />} />
-        <Route path="/fallout-game" element={<FalloutGame />} /> {/* Add route for the Fallout game */}
+        <Route path="/fallout-game" element={<FalloutGame />} />
+        <Route path="/Catalog" element={<Catalog />} />
       </Routes>
     </Router>
   );

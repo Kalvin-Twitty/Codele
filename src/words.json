@@ -148,7 +148,7 @@
     "word": "z-index",
     "hints": ["CSS property", "Stacking order", "Layering"],
     "definition": "A CSS property that sets the z-order of a positioned element.",
-    "date": "2024-05-02"
+    "date": "2024-05-04"
   },
   {
     "word": "encryption",
@@ -160,7 +160,7 @@
     "word": "firewall",
     "hints": ["Network security", "Barrier", "Packet filtering"],
     "definition": "A network security device that monitors and filters incoming and outgoing network traffic.",
-    "date": "2024-05-04"
+    "date": "2024-05-02"
   },
   {
     "word": "hacker",

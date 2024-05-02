@@ -42,7 +42,7 @@ function Leaderboard() {
             className={`flex items-center justify-between p-5 mb-4 rounded-xl shadow-xl text-lg ${index < 3 ? 'bg-gray-700' : 'bg-gray-800'}`}
           >
             <div className="flex items-center">
-              {index < 3 && <FaMedal className={`${medalColors[index]} w-6 h-6 mr-2`} />}
+              <FaMedal className={`${medalColors[index] || 'text-gray-400'} w-6 h-6 mr-2`} />
               <span>{user.username}</span>
             </div>
             <motion.div 

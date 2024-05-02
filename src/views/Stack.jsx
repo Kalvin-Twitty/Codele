@@ -11,26 +11,35 @@ function Stack() {
       description: 'A JavaScript library for building user interfaces.',
       Icon: SiReact,
       color: 'text-blue-500',
+      link: 'https://reactjs.org/',
     },
     {
       name: 'TailwindCSS',
       description: 'A utility-first CSS framework for rapid UI development.',
       Icon: SiTailwindcss,
       color: 'text-green-500',
+      link: 'https://tailwindcss.com/',
     },
     {
       name: 'Firebase',
       description: 'A platform developed by Google for creating mobile and web applications.',
       Icon: SiFirebase,
       color: 'text-yellow-500',
+      link: 'https://firebase.google.com/docs/', 
     },
     {
       name: 'Framer Motion',
       description: 'A library to power animations in React.',
       Icon: SiFramer,
       color: 'text-purple-500',
+      link: 'https://www.framer.com/motion/', 
     },
   ];
+
+  // Function to handle button click and navigate to external site
+  const handleButtonClick = (link) => {
+    window.open(link, '_blank'); // Open link in new tab
+  };
 
   return (
     <motion.div
@@ -55,7 +64,8 @@ function Stack() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-slate-800 p-6 rounded-lg shadow-xl flex items-center space-x-4 hover:bg-slate-700 transition duration-200"
+              className="bg-slate-800 p-6 rounded-lg shadow-xl flex items-center space-x-4 hover:bg-slate-700 transition duration-200 cursor-pointer" // Add cursor-pointer for hover effect
+              onClick={() => handleButtonClick(tech.link)}
             >
               <tech.Icon size="3em" className={`${tech.color}`} />
               <div>

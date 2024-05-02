@@ -1,27 +1,52 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "username": "Kalvin",
     "streak": 69
   },
   {
-    "id": 2,
+    "id": 1,
     "username": "DevPro",
     "streak": 40
   },
   {
-    "id": 3,
+    "id": 2,
     "username": "BugHunter",
     "streak": 20
   },
   {
-    "id": 4,
+    "id": 3,
     "username": "ReactNewbie",
     "streak": 14
   },
   {
-    "id": 5,
+    "id": 4,
     "username": "FullStackFanatic",
     "streak": 10
+  },
+  {
+    "id": 5,
+    "username": "CodeMaster",
+    "streak": 75
+  },
+  {
+    "id": 6,
+    "username": "JavaScriptNinja",
+    "streak": 55
+  },
+  {
+    "id": 7,
+    "username": "CSSGuru",
+    "streak": 30
+  },
+  {
+    "id": 8,
+    "username": "DatabaseWizard",
+    "streak": 25
+  },
+  {
+    "id": 9,
+    "username": "PythonPro",
+    "streak": 18
   }
 ]

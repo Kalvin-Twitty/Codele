@@ -37,7 +37,8 @@ const Navbar = () => {
           <Link to="/leaderboard" className="block py-2 text-green-400" onClick={() => setIsMenuOpen(false)}>Leaderboard</Link>
           <Link to="/about" className="block py-2 text-green-400" onClick={() => setIsMenuOpen(false)}>About</Link>
           <Link to="/stack" className="block py-2 text-green-400" onClick={() => setIsMenuOpen(false)}>Stack</Link>
-          {/* Add additional links as needed */}
+          <Link to="/Catalog" className="block py-2 text-green-400" onClick={() => setIsMenuOpen(false)}>Catalog</Link> {/* Add link to the Journey page */}
+      
           <button
             className="mt-4 p-2 w-full bg-green-500 rounded hover:bg-green-400 text-slate-800"
             onClick={() => setIsMenuOpen(false)}
